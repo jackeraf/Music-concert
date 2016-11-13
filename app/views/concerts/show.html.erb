@@ -35,5 +35,6 @@
   <%= @concert.done_at %>
 </p>
 
-<%= link_to 'Edit', edit_concert_path(@concert) %> |
+
 <%= link_to 'Back', concerts_path %>
+<%= link_to 'Add comment', new_concert_comment_path(@concert) %>
