@@ -10,13 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161113151219) do
+ActiveRecord::Schema.define(version: 20161113171640) do
 
   create_table "comments", force: :cascade do |t|
     t.string   "user_name"
     t.text     "comment"
+    t.integer  "concert_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["concert_id"], name: "index_comments_on_concert_id"
+    # reference will add the belong_to: t.index column. This were the commands:
+    # rails g model Comment user_name:string comment:text concert:references
+
   end
 
   create_table "concerts", force: :cascade do |t|

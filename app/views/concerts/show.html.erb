@@ -35,6 +35,12 @@
   <%= @concert.done_at %>
 </p>
 
+<p>
+<% Comment.all.each do |comment| %>
+<p><%= comment.comment %></p>
+<% end %>
+
+</p>
 
 <%= link_to 'Back', concerts_path %>
 <%= link_to 'Add comment', new_concert_comment_path(@concert) %>
