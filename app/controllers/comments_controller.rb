@@ -20,8 +20,8 @@ class CommentsController < ApplicationController
 		if @comment.save
 			flash[:notice] = "Comment created sucesfully"
 			# redirect_to concert_comments_path(@concert)
-			# redirect_to "concerts/#{@concert.id}"
-			redirect_to concert_path(@comment)
+			redirect_to "concerts/#{@concert.id}"
+			# redirect_to concert_path(@comment)
 
 		else
 			flash.now[:alert] = "Problem with the comment"

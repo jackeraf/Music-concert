@@ -40,7 +40,18 @@
 <strong>COMENTARIOS:</strong> 
 
 
-<% Comment.all.each do |comment| %>
+
+
+<!-- <%= @concert.inspect%> => RESULT FROM ABOVE INSPECT #<Concert id: 1, artist: "Luke", venue: "Razzmatazz", city: "Barcelona", date: "2016-08-17", description: "an awesome party", price: 15, done_at: nil, created_at: "2016-11-13 17:16:49", updated_at: "2016-11-13 17:16:49"> -->
+
+
+
+<!--<%= @concert.comments.inspect%> => RESULT FROM ABOVE INSPECT: #<ActiveRecord::Associations::CollectionProxy []> -->
+<!-- where The collection proxy and the [] tells me that it's an array -->
+
+
+
+<% @concert.comments.each do |comment| %>
 <p><%= comment.comment %></p>
 <% end %>
 
